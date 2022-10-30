@@ -26,6 +26,21 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faLanguage}></FontAwesomeIcon>,
         title: 'English',
+        subMenu: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'Language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'Language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>,
@@ -45,6 +60,10 @@ function Header() {
         //     setSearchResult([1]);
         // }, 0);
     }, []);
+
+    const handleMenuChange = (menuItem) => {
+        console.log(menuItem);
+    };
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -83,7 +102,7 @@ function Header() {
                     </Button>
                     <Button primary>Log in</Button>
 
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
