@@ -91,7 +91,16 @@
 }
 
 .action {
+    display: flex;
+    align-items: center;
+
+    .action-btn {
+        background-color: transparent;
+        color: #161823;
+        padding: 4px 12px;
+    }
     .upload {
+        margin-right: 12px;
         border: 1px solid rgba(22, 24, 35, 0.12);
         border-radius: 2px;
 
@@ -105,6 +114,14 @@
         margin-left: 28px;
         padding: 4px 8px;
         background: transparent;
+        cursor: pointer;
+    }
+    .user-avarta {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: 15px;
         cursor: pointer;
     }
 }
